@@ -1,0 +1,114 @@
+
+.navigation {
+	background-color: $accentDark;
+	min-height: $navbarHeightMobile;
+
+	.navigation__links {
+		background-color: $accentDark;
+		position: absolute;
+		display: flex;
+		flex-direction: column;
+		width: 80%;
+		margin-left: 20%;
+		text-align: right;
+		font-size: 10vw;
+		margin-top: $navbarHeightMobile;
+	}
+
+	.navigation__links--link {
+		margin-bottom: 10px;
+		border-top: 3px solid $grey;
+		padding-top: 10px;
+		padding-right: 10px;
+	}
+	
+	@include breakpoint(tablet) {
+		.navigation__links {
+			display: flex;
+		}		
+
+		.navigation__links--link {
+			padding: 20px;
+		}
+	}
+}
+
+
+.hero {
+	font-family: "Times New Roman";
+	background-color: white;
+	padding-bottom: 10vw;
+	padding-top: 0vw;
+	border-bottom: 3px solid $accentDark;
+	border-top: 3px solid $grey;
+
+	.hero__bg {
+		background-image: url('../img/burrito.jpg');
+		background-size: auto 100%;
+		background-repeat: no-repeat;
+		background-position: bottom center;
+		width: 100%;
+		height: 200px;
+		margin: 0 auto;
+		display: flex;
+		justify-content: center;
+		align-items: flex-end;
+	}
+
+	.hero__copy {
+		color: $accentDark;
+		font-size: 15vw;
+		transform: translateY(8vw);
+	}
+
+	@include breakpoint(tablet) {
+		.hero__bg {
+			height: 300px;
+		}
+
+		.hero__copy {
+			font-size: 10vw;
+		}
+	}
+}
+
+.pitch {
+	font-weight: 200;
+	width: 100%;
+	padding: 3vw;
+	text-align: center;
+
+	.pitch__header {
+		padding: 1vw;
+		width: 80%;
+		padding-bottom: 2.5vw;
+		margin: 0 auto;
+		border-bottom: 2px solid $textColor;
+		margin-bottom: 2vw;
+		font-size: 10vw;
+	}
+
+	.pitch__copy {
+		line-height: 6.5vw;
+		font-size: 6vw;
+		font-style: italic;
+	}
+
+	@include breakpoint(tablet) {
+		.pitch__header {
+			width: 35%;
+			margin-bottom: 1vw;
+			font-size: 4vw;
+		}
+
+		.pitch__copy {
+			font-weight: 100;
+			font-size: 2vw;
+			letter-spacing: 0.10vw;
+			line-height: 2.5vw;
+		}
+	}
+}
+
+
+

@@ -1,13 +1,9 @@
 
 .navigation {
 	background-color: $accentDark;
-	height: $navbarHeightMobile;
-
-	@include breakpoint(tablet) {
-		min-height: $navbarHeightMobile;
-	}
 
 	.hamburger-icon {
+		height: $navbarHeightMobile;
 		margin-left: 100%;
 		transform: translate(-100%);
 		width: 70px;
@@ -15,7 +11,6 @@
 		flex-direction: column;
 		justify-content: space-around;
 		align-items: center;
-		height: 100%;
 
 		@include breakpoint(tablet) {
 			display: none;
@@ -47,7 +42,6 @@
 		margin-left: 20%;
 		text-align: right;
 		font-size: 1.5rem;
-		margin-top: $navbarHeightMobile;
 	}
 
 	.navigation__links--link {
@@ -58,19 +52,21 @@
 	}
 	
 	@include breakpoint(tablet) {
-		height: $navbarHeightMobile;
+		flex-direction: row;
+		align-items: center;
 
 		.navigation__links {
 			display: flex;
 			flex-direction: row;
 			align-items: center;
+			justify-content: space-around;
 			position: relative;
 			margin: 0;
 		}		
 
 		.navigation__links--link {
 			margin: none;
-			padding: 20px;
+			padding: none;
 			border: none;
 		}
 	}

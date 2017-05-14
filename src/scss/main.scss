@@ -16,12 +16,15 @@ body, html {
 
 body {
 	color: $textColor;
-	background-color: $mainBGColor;
 	font-family: 'Helvetica Neue';
 }
 
 a {
 	color: inherit;
 	text-decoration: none;
+}
+
+section {
+	background-color: $mainBGColor;
 }
 

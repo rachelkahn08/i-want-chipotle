@@ -107,7 +107,6 @@
 
 .hero {
 	font-family: "Times New Roman";
-	padding-bottom: 10vw;
 	border-bottom: 3px solid $accentDark;
 	border-top: 3px solid $grey;
 	background: transparent;
@@ -126,7 +125,10 @@
 		background: transparent;
 		color: $accentDark;
 		font-size: 15vw;
-		transform: translateY(8vw);
+		width: 100%;
+		text-align: center;
+		margin-top: 50px;
+		padding-bottom: 10px;
 	}
 
 	@include breakpoint(tablet) {
@@ -295,7 +297,6 @@
 			margin: 8px;
 			min-width: 200px;
 		}
-
 	}
 
 }
@@ -324,5 +325,13 @@
 
 	@include breakpoint(tablet) {
 		display: none;
+	}
+}
+
+.hide-mobile {
+	display: none;
+
+	@include breakpoint(tablet) {
+		display: inherit; 
 	}
 }

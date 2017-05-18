@@ -21,25 +21,52 @@
 					<div class="hamburger-bars--single"></div>
 				</div>
 			</div>
-			<ul class="navigation__links">
-				<a href="" class="navigation__links--link"><li>
+			<ul class="navigation__links invisible">
+				<a href="#amelia"><li class="navigation__links--link from-right">
 					about amelia
 				</li></a>
-				<a href="" class="navigation__links--link"><li>
+				<a href="#perks"><li class="navigation__links--link from-right">
 					donor perks
 				</li></a>
-				<a href="" class="navigation__links--link"><li>
+				<a href="#donate"><li class="navigation__links--link from-right hide-mobile">
 					donate now
 				</li></a>
 			</ul>
 		</nav>
 
 		<section class="hero">
-			<figure class="hero__bg">
+			<figure class="hero__bg parallax-window">
 				<h1 class="hero__copy">
 					i want chipotle.
 				</h1>
 			</figure>
+		</section>
+
+		<section class="more-details">
+			<div class="more-details__details-container" id="burrito">
+				<div class="more-details__icon-container">
+					<div class="more-details__icon burrito"></div>
+					<p class="more-details__icon__title">this is a burrito</p>
+				</div>
+				<h4 class="more-details__header">dear internet:</h4>
+				<p class="more-details__copy">please help me achieve my dreams of holding a chipotle burrito and calling it my own</p>
+			</div>
+			<div class="more-details__details-container" id="amelia">
+				<div class="more-details__icon-container">
+					<div class="more-details__icon amelia"></div>
+					<p class="more-details__icon__title">help amelia (me)</p>
+				</div>
+				<h4 class="more-details__header">pls help a girl out</h4>
+				<p class="more-details__copy">i don't have the funds to support my guacamole love</p>
+			</div>
+			<div class="more-details__details-container" id="donate">
+				<div class="more-details__icon-container">
+					<div class="more-details__icon money"></div>
+					<p class="more-details__icon__title">$1 = 1 bite</p>
+				</div>
+				<h4 class="more-details__header">i'll give you a bite</h4>
+				<p class="more-details__copy">sharing is caring fam</p>
+			</div>		
 		</section>
 
 		<section class="pitch">
@@ -54,55 +81,16 @@
 			</p>
 		</section>
 
-		<section class="more-details">
-			<div class="more-details__details-container">
-				<div class="more-details__icon">
-					<p class="more-details__icon__title">amelia</p>
-				</div>
-				<h4 class="more-details__header">pls help a girl out</h4>
-				<p class="more-details__copy">i don't have the funds to support my guacamole love</p>
-			</div>
-			<div class="more-details__details-container">
-				<div class="more-details__icon">
-					<p class="more-details__icon__title">$1 perk</p>
-				</div>
-				<h4 class="more-details__header">i'll give you a bite</h4>
-				<p class="more-details__copy">sharing is caring fam</p>
-			</div>
-			<div class="more-details__details-container">
-				<div class="more-details__icon">
-					<p class="more-details__icon__title">burrito</p>
-				</div>
-				<h4 class="more-details__header">dear internet:</h4>
-				<p class="more-details__copy">please help me achieve my dreams of holding a chipotle burrito and calling it my own</p>
-			</div>
+		<section class="donate-now">
+			<div class="donate-button">DONATE NOW</div>
 		</section>
-
-		<footer>
-			<ul class="footer-links">
-				<a href=""><li>
-					<figure class="footer-links__link"></figure>
-				</li></a>
-				<a href=""><li>
-					<figure class="footer-links__link"></figure>
-				</li></a>
-				<a href=""><li>
-					<figure class="footer-links__link"></figure>
-				</li></a>
-				<a href=""><li>
-					<figure class="footer-links__link"></figure>
-				</li></a>
-				<a href=""><li>
-					<figure class="footer-links__link"></figure>
-				</li></a>
-			</ul>
-		</footer>
 
 		<script
 		  src="https://code.jquery.com/jquery-3.2.1.min.js"
 		  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
 		  crossorigin="anonymous"></script>
-		<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		<script src="src/js/parallax.min.js"></script>
 		<script src="assets/js/main.js"></script>
 	</body>
 </html>

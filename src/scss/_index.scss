@@ -31,12 +31,24 @@
 		width: 50px;
 		height: 10px;
 		background-color: $grey;
+		transition-duration: 0.5s;
+
+		&.tilt-positive {
+			transform: rotate(45deg) translate(11.5px, 11.5px);
+		}
+
+		&.disappear {
+			width: 0;
+		}
+
+		&.tilt-negative {
+			transform: rotate(-45deg) translate(10px, -10px);
+		}
 	}
 
 	.navigation__links {
 		background-color: $accentDark;
 		position: absolute;
-		display: none;
 		flex-direction: column;
 		width: 80%;
 		margin-left: 20%;
@@ -45,23 +57,33 @@
 	}
 
 	.navigation__links--link {
-		margin-bottom: 10px;
 		border-top: 3px solid $grey;
 		padding-top: 10px;
 		padding-right: 10px;
+		margin-bottom: 10px;
+		transition: 0.25s;
+
+		&:hover {
+			text-decoration: underline;
+		}
 	}
-	
+
 	@include breakpoint(tablet) {
 		flex-direction: row;
 		align-items: center;
+		position: fixed;
+		width: 100%;
+		height: 64px;
+		padding-top: 10px;
 
-		.navigation__links {
+		.navigation__links {	
 			display: flex;
 			flex-direction: row;
 			align-items: center;
 			justify-content: space-around;
 			position: relative;
 			margin: 0;
+			margin-left: 10%;
 		}		
 
 		.navigation__links--link {
@@ -85,19 +107,15 @@
 
 .hero {
 	font-family: "Times New Roman";
-	background-color: white;
 	padding-bottom: 10vw;
-	padding-top: 0vw;
 	border-bottom: 3px solid $accentDark;
 	border-top: 3px solid $grey;
+	background: transparent;
 
 	.hero__bg {
-		background-image: url('../img/burrito.jpg');
-		background-size: auto 100%;
-		background-repeat: no-repeat;
-		background-position: bottom center;
+		background: transparent;
 		width: 100%;
-		height: 200px;
+		min-height: 250px;
 		margin: 0 auto;
 		display: flex;
 		justify-content: center;
@@ -105,12 +123,16 @@
 	}
 
 	.hero__copy {
+		background: transparent;
 		color: $accentDark;
 		font-size: 15vw;
 		transform: translateY(8vw);
 	}
 
 	@include breakpoint(tablet) {
+		
+		padding-top: 64px;
+
 		.hero__bg {
 			height: 350px;
 		}
@@ -123,23 +145,28 @@
 
 .pitch {
 	font-weight: 200;
+	background-color: $grey;
+	color: $accentDark;
 	width: 100%;
 	padding: 3vw;
+	padding-bottom: 70px;
 	text-align: center;
+	border-top: 3px solid $accentDark;
+	border-bottom: 3px solid $textColor;
 
 	.pitch__header {
 		padding: 1vw;
+		font-weight: 400;
 		width: 80%;
 		padding-bottom: 2.5vw;
 		margin: 0 auto;
 		border-bottom: 2px solid $textColor;
 		margin-bottom: 2vw;
-		font-size: 10vw;
+		font-size: 2.16rem;
 	}
 
 	.pitch__copy {
-		line-height: 6.5vw;
-		font-size: 6vw;
+		font-size: 1.5rem;
 		font-style: italic;
 	}
 
@@ -147,15 +174,14 @@
 		.pitch__header {
 			width: 55%;
 			margin-bottom: 2vw;
-			font-size: 5vw;
+			// font-size: ;
 			padding-bottom: 1vw;
 		}
 
 		.pitch__copy {
 			font-weight: 100;
-			font-size: 3vw;
+			// font-size: 3vw;
 			letter-spacing: 0.10vw;
-			line-height: 3.5vw;
 		}
 	}
 }
@@ -165,7 +191,7 @@
 	flex-direction: column;
 	justify-content: flex-start;
 	align-items: center;
-	color: $mainBGColor;
+	color: $accentDark;
 
 	.more-details__details-container {
 		display: flex;
@@ -174,51 +200,89 @@
 		align-items: center;
 		text-align: center;
 		margin: 30px;
-		margin-bottom: 10vw;
 		width: 75%;
+		min-width: 275px;
 		background-color: $grey;
 		border-radius: 10px;
 		padding-top: 30px;
 		padding-bottom: 30px;
 	}
 
-	.more-details__icon {
+	.more-details__icon-container {
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		height: 170px;
 		width: 170px;
 		border-radius: 50%;
-		background-color: $grey;
-		border: 4px solid $textColor;
+		background-color: white;
+		border: 4px solid $accentDark;
 		margin-bottom: 10px;
+		overflow: hidden;
 
+		&:hover {	
+			filter: grayscale(100%);
 
-		&:hover {
+			.more-details__icon {
+				filter: grayscale(100%) blur(20px);
+			}
+			
 			.more-details__icon__title {
 				display: initial;
+				height: 170px;
+				width: 170px;
+				border-radius: 50%;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				text-align: center;
 			}
 		}
 	}
 
+	.more-details__icon {
+
+		height: 100%;
+		width: 100%;
+		background-repeat: no-repeat;
+
+		&.amelia {
+			background-image: url(../img/amelia-placeholder.jpg);
+			background-size: cover;
+		}
+
+		&.burrito {
+			background-image: url(../img/burrito2.jpg);
+			background-size: 100% auto;
+			background-position: center;
+		}
+
+		&.money {
+			background-image: url(../img/money.jpg);
+			background-size: 100% auto;;
+			background-position: center;
+		}	
+
+	}
+
 	.more-details__icon__title {
+		position: absolute;
 		display: none;
-		color: $mainBGColor;
+		color: $accentDark;
 		font-family: "Times New Roman";
 		font-size: 45px;
 		transform: rotate(-30deg);
 	}
 
 	.more-details__header {
-		font-size: 7.5vw;
-		line-height: 8vw;
+		font-size: 2rem;
 		margin-bottom: 2vw;
 	}
 
 	.more-details__copy {
 		font-weight: 200;
 		max-width: 80%;
-
+		font-size: 1.3rem;
 	}
 
 	@include breakpoint(tablet) {
@@ -229,12 +293,36 @@
 
 		.more-details__details-container {
 			margin: 8px;
+			min-width: 200px;
 		}
-
 
 	}
 
 }
 
+.donate-now {
+	background: transparent;
+	width: 100%;
+	position: fixed;
+	bottom: 0;
+	display: flex;
+	justify-content: center;
+	margin-bottom: 20px;
 
 
+	.donate-button {
+		padding: 10px;
+		width: 50%;
+		background-color: $accentDark;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border-radius: 10px;
+		min-width: 180px;
+		font-size: 1.5rem;
+	}
+
+	@include breakpoint(tablet) {
+		display: none;
+	}
+}

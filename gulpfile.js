@@ -44,7 +44,7 @@ gulp.task('scripts', function() {
 	.pipe(jshint())
 	.pipe(jshint.reporter('default'))
 	.pipe(sourcemaps.init())
-	.pipe(concat('all.js'))
+	.pipe(concat('main.js'))
 	.pipe(sourcemaps.write())
 	.pipe(gulp.dest('assets/js'));
 });

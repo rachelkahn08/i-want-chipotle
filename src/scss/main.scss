@@ -17,6 +17,7 @@ body, html {
 body {
 	color: $textColor;
 	font-family: 'Helvetica Neue';
+	background: transparent;
 }
 
 a {
@@ -25,6 +26,10 @@ a {
 }
 
 section {
-	background-color: $mainBGColor;
+	background: transparent;
+}
+
+.invisible {
+	display: none;
 }
 

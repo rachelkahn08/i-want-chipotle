@@ -9,6 +9,8 @@ $('.hamburger-icon').on("click", function() {
 		$(hamburgerBars[1]).toggleClass('disappear');
 		$(hamburgerBars[2]).toggleClass('tilt-negative');
 	}
+
+	$('.navigation__links').toggleClass('animate-from-right');
 	
 });
 

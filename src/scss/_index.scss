@@ -335,3 +335,13 @@
 		display: inherit; 
 	}
 }
+
+.animate-from-right {
+	animation-name: fromRight;
+	animation-duration: 0.25s;
+}
+
+@keyframes fromRight {
+	0% { right: -1000px }
+	100% { right: 0px }
+}
